@@ -1,12 +1,5 @@
-# React + Vite
+# Reverb-Clone-FSW
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Management
+- [Miro-ERD](https://miro.com/welcomeonboard/NUZMa2NLek9xRjQwUmYzb0dMQVNTOUJVVkYwQjFHUTBqMVVRYkw3aFNuelBYMTBpUDRZaFdNT3V3dGl6dWZqbE1COGdLb05tTEY1SG8rSmlFT2JUM2d1UTNNNnhVNktCbGs1a2MrZGhRRWhFZ1lhVlVLdm5PWTNMaTdrc2dMU0NhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=419437778021)
+- [Figma-Wireframe](https://www.figma.com/board/zgjF14wSWtIndogHUGPQG2/Reverb-Clone-FSW?t=7OENkKsbaRwz9Ive-1)
