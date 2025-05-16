@@ -1,23 +1,22 @@
 package com.postgresql.reverbclone.model;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.Collection;
+import java.util.Collections;
+
 public class UserPrincipal implements UserDetails {
-    // private Users user;
+    private Users user;
 
-    // public UserPrincipal(Users user) {
-    //     this.user = user;
-    // }
-
-    // constructor here for userprincipal
-    // required implementation like tableview stuff 
     public UserPrincipal(Users user) {
-        //TODO Auto-generated constructor stub
+        this.user = user;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.emptyList();
+        return Collections.singleton(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
     @Override
