@@ -45,4 +45,9 @@ public class UsersDBController {
     public CsrfToken getCsrfToken(HttpServletRequest request) {
         return (CsrfToken) request.getAttribute("_csrf");
     }
+
+    @PostMapping("/login")
+    public String login(@RequestBody Users user) {
+        return service.verify(user);
+    }
 }
