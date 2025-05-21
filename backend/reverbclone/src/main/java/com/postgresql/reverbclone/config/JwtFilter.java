@@ -54,7 +54,6 @@ public class JwtFilter extends OncePerRequestFilter{
             }
         }
         filterChain.doFilter(request, response);
-        throw new UnsupportedOperationException("Unimplemented method 'doFilterInternal'");
     }
     
 }

@@ -19,13 +19,13 @@ import jakarta.servlet.http.HttpServletRequest;
 @RequestMapping("/users")
 public class UsersDBController {
 
-    @Autowired
-    private UserService service;
+    // @Autowired
+    // private UserService service;
 
-    @PostMapping("/register")
-    public Users register(@RequestBody Users user) {
-        return service.register(user);
-    }
+    // @PostMapping("/register")
+    // public Users register(@RequestBody Users user) {
+    //     return service.register(user);
+    // }
 
     private final UserRepo userRepo;
 
@@ -46,8 +46,8 @@ public class UsersDBController {
         return (CsrfToken) request.getAttribute("_csrf");
     }
 
-    @PostMapping("/login")
-    public String login(@RequestBody Users user) {
-        return service.verify(user);
-    }
+    // @PostMapping("/login")
+    // public String login(@RequestBody Users user) {
+    //     return service.verify(user);
+    // }
 }
