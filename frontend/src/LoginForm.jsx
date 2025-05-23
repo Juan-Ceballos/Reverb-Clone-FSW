@@ -56,9 +56,44 @@ const LoginForm = () => {
         }
     }
 
+    // UI
     return (
         <div>
             <h1>Sign in to your account</h1>
+            <div>
+                <label htmlFor="username" className='sr-only'>
+                    Username
+                </label>
+                <input
+                    id='username'
+                    name='username' 
+                    type="text" 
+                    required 
+                    className='appearance-none'
+                    placeholder='Username'
+                    value={formData.username}
+                    onChange={handleChange}
+                    onKeyDown={(eventObject) => eventObject.key === 'Enter' && handleSubmit(eventObject)}
+                />
+            </div>
+
+            <div>
+                <label htmlFor="password" className='sr-only'>
+                    Password
+                </label>
+                <input
+                    id='password'
+                    name='password' 
+                    type="text" 
+                    required
+                    className='appearance-none'
+                    placeholder='Password'
+                    value={formData.password}
+                    onChange={handleChange}
+                    onKeyDown={(eventObject) => eventObject.key === 'Enter' && handleSubmit(eventObject)}
+                />
+            </div>
+            
         </div>
     )
 }
