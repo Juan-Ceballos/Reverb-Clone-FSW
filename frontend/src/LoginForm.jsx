@@ -93,7 +93,37 @@ const LoginForm = () => {
                     onKeyDown={(eventObject) => eventObject.key === 'Enter' && handleSubmit(eventObject)}
                 />
             </div>
-            
+
+            {error && (
+                <div className='text-red-700'>
+                    {error}
+                </div>
+            )}
+
+            {message && (
+                <div className='text-green-700'>
+                    {message}
+                </div>
+            )}
+
+            <div>
+                <button
+                    type="button"
+                    disabled={loading}
+                    className='justify-center'
+                    onClick={handleSubmit}
+                >
+                    {loading ? (
+                        <div className='flex items-center'>
+                            <div className='animate-spin rounded-full'></div>
+                                Signing in...
+                            </div>
+                            ) : (
+                                'Sign in'
+                            )}
+                </button>
+            </div>
+
         </div>
     )
 }
