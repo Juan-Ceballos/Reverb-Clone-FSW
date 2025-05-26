@@ -28,7 +28,7 @@ const LoginForm = () => {
     }
 
     const handleSubmit = async (eventObject) => {
-        error.preventDefault()
+        eventObject.preventDefault()
         setLoading(true)
         setMessage('')
         setError('')
@@ -37,16 +37,21 @@ const LoginForm = () => {
             const response = await fetch('http://localhost:8080/login', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(formData)
             })
             if(response.ok) {
-                const result = await response.text()
-                setMessage(`Login successful: ${result}`)
-                console.log('Login successful:', result)
+                const result = await response.json()
+                if(result.token) {
+                    setMessage(`Login successful: ${formData.username}`)
+                    console.log('Login successful:', result)
+                } else {
+                    setMessage('Login successful!')
+                }
             } else {
-                setError(`Login failed: ${response.status} - ${response.statusText}`)
+                const errorText = await response.text()
+                setError(`Login failed: ${response.status} - ${errorText || response.statusText}`)
             }
         } catch(err) {
             setError(`Network error: ${err.message}`)
@@ -84,7 +89,7 @@ const LoginForm = () => {
                 <input
                     id='password'
                     name='password' 
-                    type="text" 
+                    type="password" // text
                     required
                     className='appearance-none'
                     placeholder='Password'
