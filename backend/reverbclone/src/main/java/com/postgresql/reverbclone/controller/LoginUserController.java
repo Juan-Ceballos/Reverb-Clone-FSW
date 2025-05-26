@@ -19,6 +19,9 @@ public class LoginUserController {
     @Autowired
     private UserService service;
 
+    // only accepts the encrypted password to route here
+    // frontend does not go to separate page or web address
+    // front end give login failed: 401 - error message
     @PostMapping("/login")
     public String login(@RequestBody Users user) {
         System.out.println("Success! Juan!");
