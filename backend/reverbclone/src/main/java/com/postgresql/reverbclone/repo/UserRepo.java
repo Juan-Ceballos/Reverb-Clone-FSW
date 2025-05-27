@@ -7,6 +7,5 @@ import com.postgresql.reverbclone.model.Users;
 
 @Repository
 public interface UserRepo extends JpaRepository<Users, Integer> {
-
     Users findByUsername(String username);
 }

@@ -18,11 +18,15 @@ public class MyUserDetailsService implements UserDetailsService {
     
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        // username typo here
         Users user = repo.findByUsername(username);
+
         if (user == null) {
+                    System.out.println("MyUserDetailsService NULL Juan!");
+
             throw new UsernameNotFoundException("User not found");
         }
+                System.out.println("MyUserDetailsService FOUND Juan!");
+        
         return new UserPrincipal(user);
         // created constructor somewhere
     }
