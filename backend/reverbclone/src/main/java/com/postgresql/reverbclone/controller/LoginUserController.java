@@ -1,6 +1,9 @@
 package com.postgresql.reverbclone.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,9 +26,10 @@ public class LoginUserController {
     // frontend does not go to separate page or web address
     // front end give login failed: 401 - error message
     @PostMapping("/login")
-    public String login(@RequestBody Users user) {
+    public ResponseEntity<?> login(@RequestBody Users user) {
         System.out.println("Success! Juan!");
-        return service.verify(user);
+        String token = service.verify(user);
+        return ResponseEntity.ok(Map.of("token", token));
     }
 
 //     @PostMapping("/logout")
