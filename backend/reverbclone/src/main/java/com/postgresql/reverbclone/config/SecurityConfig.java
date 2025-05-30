@@ -23,12 +23,10 @@ public class SecurityConfig {
     @Autowired
     private UserDetailsService userDetailsService;
 
-
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
     }
-
 
     @Bean
     public AuthenticationProvider authenticationProvider() {
@@ -49,7 +47,6 @@ public class SecurityConfig {
             .requestMatchers("/register", "/login")
             .permitAll()
             .anyRequest().authenticated())
-            .httpBasic(Customizer.withDefaults())
             .sessionManagement(session ->
                 session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             )
@@ -57,5 +54,3 @@ public class SecurityConfig {
             .build();
     }
 }
-
-//.formLogin(Customizer.withDefaults())

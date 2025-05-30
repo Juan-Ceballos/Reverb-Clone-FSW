@@ -28,6 +28,5 @@ public class MyUserDetailsService implements UserDetailsService {
                 System.out.println("MyUserDetailsService FOUND Juan!");
         
         return new UserPrincipal(user);
-        // created constructor somewhere
     }
 }

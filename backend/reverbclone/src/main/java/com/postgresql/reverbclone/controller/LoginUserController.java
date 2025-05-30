@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,18 +23,16 @@ public class LoginUserController {
     @Autowired
     private UserService service;
 
-    // only accepts the encrypted password to route here
-    // frontend does not go to separate page or web address
-    // front end give login failed: 401 - error message
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Users user) {
-        System.out.println("Success! Juan!");
-        String token = service.verify(user);
-        return ResponseEntity.ok(Map.of("token", token));
+
+        try {
+            String token = service.verify(user);
+            return ResponseEntity.ok(Map.of("token", token));
+        } catch(BadCredentialsException e) {
+            return ResponseEntity.status(401)
+                .body(Map.of("message", "Invalid Credentials"));
+        }
     }
 
-//     @PostMapping("/logout")
-//     public String logout() {
-        
-//     }
 }
