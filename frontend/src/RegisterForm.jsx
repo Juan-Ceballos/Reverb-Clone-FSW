@@ -49,6 +49,74 @@ const RegisterForm = () => {
     }
     }
 
-    
+    return (
+        <div>
+            <h1>Register with username and password</h1>
+            <div>
+                <label htmlFor="username" className='sr-only'>
+                    Username
+                </label>
+                <input
+                    id='username'
+                    name='username' 
+                    type="text" 
+                    required 
+                    className='appearance-none'
+                    placeholder='Username'
+                    value={formData.username}
+                    onChange={handleChange}
+                    onKeyDown={(eventObject) => eventObject.key === 'Enter' && handleSubmit(eventObject)}
+                />
+            </div>
+
+            <div>
+                <label htmlFor="password" className='sr-only'>
+                    Password
+                </label>
+                <input
+                    id='password'
+                    name='password' 
+                    type="password" // text
+                    required
+                    className='appearance-none'
+                    placeholder='Password'
+                    value={formData.password}
+                    onChange={handleChange}
+                    onKeyDown={(eventObject) => eventObject.key === 'Enter' && handleSubmit(eventObject)}
+                />
+            </div>
+
+            {error && (
+                <div className='text-red-700'>
+                    {error}
+                </div>
+            )}
+
+            {message && (
+                <div className='text-green-700'>
+                    {message}
+                </div>
+            )}
+
+            <div>
+                <button
+                    type="button"
+                    disabled={loading}
+                    className='justify-center'
+                    onClick={handleSubmit}
+                >
+                    {loading ? (
+                        <div className='flex items-center'>
+                            <div className='animate-spin rounded-full'></div>
+                                Signing in...
+                            </div>
+                            ) : (
+                                'Sign in'
+                            )}
+                </button>
+            </div>
+        </div>
+    )
 }
 
+export default RegisterForm
