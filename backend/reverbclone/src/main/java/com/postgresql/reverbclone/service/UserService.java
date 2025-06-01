@@ -31,8 +31,6 @@ public class UserService {
             throw new RuntimeException("User with username " + request.getUsername() + " already exists");
          }
 
-         //Users currUser = new Users();
-         //currUser.setUsername(user.getUsername());
          Users user = new Users();
          user.setId(user.getId());
          user.setUsername(user.getUsername());
