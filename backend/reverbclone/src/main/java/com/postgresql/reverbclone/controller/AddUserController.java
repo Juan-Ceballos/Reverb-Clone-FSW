@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.postgresql.reverbclone.model.UserRegistrationRequest;
-import com.postgresql.reverbclone.model.UserResponse;
 import com.postgresql.reverbclone.model.Users;
 import com.postgresql.reverbclone.service.UserService;
 
@@ -30,7 +29,7 @@ public class AddUserController {
     @PostMapping("/register")
     public ResponseEntity<?> register(@Valid @RequestBody UserRegistrationRequest request) {
         try {
-            UserResponse user = service.register(request);
+            Users user = service.register(request);
             return ResponseEntity.ok(user);
         } catch(RuntimeException e) {
             return ResponseEntity.badRequest()

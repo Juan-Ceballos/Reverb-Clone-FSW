@@ -26,7 +26,7 @@ const RegisterForm = () => {
         setError('')
 
         try {
-        const response = await fetch('http://localhost:8080/login', {
+        const response = await fetch('http://localhost:8080/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -108,10 +108,10 @@ const RegisterForm = () => {
                     {loading ? (
                         <div className='flex items-center'>
                             <div className='animate-spin rounded-full'></div>
-                                Signing in...
+                                Regestring...
                             </div>
                             ) : (
-                                'Sign in'
+                                'Register'
                             )}
                 </button>
             </div>

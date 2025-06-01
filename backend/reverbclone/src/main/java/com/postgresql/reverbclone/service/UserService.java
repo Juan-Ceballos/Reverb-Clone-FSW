@@ -8,7 +8,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.postgresql.reverbclone.model.UserRegistrationRequest;
-import com.postgresql.reverbclone.model.UserResponse;
 import com.postgresql.reverbclone.model.Users;
 import com.postgresql.reverbclone.repo.UserRepo;
 
@@ -26,17 +25,16 @@ public class UserService {
 
     private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
 
-     public UserResponse register(UserRegistrationRequest request) {
+     public Users register(UserRegistrationRequest request) {
          if (repo.existsByUsername(request.getUsername())) {
             throw new RuntimeException("User with username " + request.getUsername() + " already exists");
          }
 
          Users user = new Users();
-         user.setId(user.getId());
-         user.setUsername(user.getUsername());
-         user.setPassword(encoder.encode(user.getPassword()));
+         user.setUsername(request.getUsername());
+         user.setPassword(encoder.encode(request.getPassword()));
          Users savedUser = repo.save(user);
-         return new UserResponse(savedUser);
+         return savedUser;
      }
 
      public String verify(Users user) {
