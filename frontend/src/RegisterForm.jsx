@@ -1,7 +1,10 @@
 // register form to do
 import React, {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 
 const RegisterForm = () => {
+    const navigate = useNavigate()
+
     const [formData, setFormData] = useState({
         username: '',
         password: '',
@@ -34,8 +37,8 @@ const RegisterForm = () => {
             body: JSON.stringify(formData)
         })
             if(response.ok) {
-                
                 setMessage('Registered User!')
+                navigate(`user/${formData.username}`)
             } else {
                 const errorText = await response.text()
                 setError(`Registration failed: ${response.status} - ${errorText || response.statusText}`)

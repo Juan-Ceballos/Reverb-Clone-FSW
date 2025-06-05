@@ -1,7 +1,9 @@
 import React, {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 
 // arrow function anonymys
 const LoginForm = () => {
+    const navigate = useNavigate()
     // array destructuring, useState is an array with two values
     // useState array first element = formData, array 2 = setFormData
     // each value is an object of {username, password}
@@ -46,8 +48,10 @@ const LoginForm = () => {
                 if(result.token) {
                     setMessage(`Login successful: ${formData.username}`)
                     console.log('Login successful:', result)
+                    navigate(`user/${formData.username}`)
                 } else {
                     setMessage('Login successful!')
+                    navigate(`user/${formData.username}`)
                 }
             } else {
                 const errorText = await response.text()
