@@ -16,11 +16,10 @@ function App() {
           </Route>
           <Route path="/login" element={<LoginForm></LoginForm>}>
           </Route>
-          <Route path="/username/:username" element={<ProfilePage></ProfilePage>}>
+          <Route path="register/user/:username" element={<ProfilePage></ProfilePage>}>
           </Route>
         </Routes>
       </BrowserRouter>
-      <RegisterForm></RegisterForm>
     </>
   )
 }

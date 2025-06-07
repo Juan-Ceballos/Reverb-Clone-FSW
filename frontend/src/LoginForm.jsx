@@ -48,10 +48,10 @@ const LoginForm = () => {
                 if(result.token) {
                     setMessage(`Login successful: ${formData.username}`)
                     console.log('Login successful:', result)
-                    navigate(`user/${formData.username}`)
+                    navigate(`register/user/${formData.username}`)
                 } else {
                     setMessage('Login successful!')
-                    navigate(`user/${formData.username}`)
+                    navigate(`register/user/${formData.username}`)
                 }
             } else {
                 const errorText = await response.text()

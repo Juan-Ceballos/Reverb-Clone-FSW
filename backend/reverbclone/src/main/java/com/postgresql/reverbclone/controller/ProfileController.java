@@ -14,7 +14,7 @@ import com.postgresql.reverbclone.model.Users;
 import com.postgresql.reverbclone.repo.UserRepo;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/register")
 @CrossOrigin(origins = "http://localhost:5173")
 public class ProfileController {
     @Autowired
