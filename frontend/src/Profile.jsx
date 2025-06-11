@@ -6,7 +6,10 @@ const ProfilePage = () => {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:8080/user/${username}`)
+        const token = localStorage.getItem('jwt')
+        fetch(`http://localhost:8080/user/${username}`,
+            {headers: {'Authorization': `Bearer ${token}`}}
+        )
             .then(res => res.json())
             .then(data => setUser(data));
     }, [username]);

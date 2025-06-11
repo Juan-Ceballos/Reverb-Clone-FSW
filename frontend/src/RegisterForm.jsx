@@ -38,7 +38,6 @@ const RegisterForm = () => {
         })
             if(response.ok) {
                 setMessage('Registered User!')
-                //navigate(`user/${formData.username}`)
                 navigate('/login')
             } else {
                 const errorText = await response.text()

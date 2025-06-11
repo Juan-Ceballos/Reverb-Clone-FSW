@@ -46,12 +46,13 @@ const LoginForm = () => {
             if(response.ok) {
                 const result = await response.json()
                 if(result.token) {
+                    localStorage.setItem('jwt', result.token)
                     setMessage(`Login successful: ${formData.username}`)
                     console.log('Login successful:', result)
-                    navigate(`register/user/${formData.username}`)
+                    navigate(`/user/${formData.username}`)
                 } else {
                     setMessage('Login successful!')
-                    navigate(`register/user/${formData.username}`)
+                    navigate(`/user/${formData.username}`)
                 }
             } else {
                 const errorText = await response.text()
