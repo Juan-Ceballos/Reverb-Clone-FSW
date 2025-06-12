@@ -28,6 +28,9 @@ public class SecurityConfig {
         return config.getAuthenticationManager();
     }
 
+    // AuthenticationProvider configures how authentication will work
+    // Will use BCrypt for password verification and 
+    // userDetailsService to load user data
     @Bean
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
@@ -39,6 +42,8 @@ public class SecurityConfig {
     @Autowired
     private JwtFilter jwtFilter;
 
+    // Filter Chain, permits public endpoints, requires JWT authentication for others
+    // due to adding your JWTFilter that extends OncePerRequestFilter
     @Bean 
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
