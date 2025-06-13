@@ -7,6 +7,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Collections;
 
+// Wraps Users model for data and implements UserDetails
+// which spring security users for authentication and authorization
 public class UserPrincipal implements UserDetails {
     private Users user;
 

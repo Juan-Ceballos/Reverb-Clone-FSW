@@ -3,7 +3,8 @@ package com.postgresql.reverbclone.model;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-
+// stores data in instances of this class that user
+// entered in front-end and sent as request
 public class UserRegistrationRequest {
     @NotBlank(message = "Username is required")
     @Size(min = 6, message = "Username must be at least 6 characters")

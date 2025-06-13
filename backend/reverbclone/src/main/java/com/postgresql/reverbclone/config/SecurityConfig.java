@@ -1,4 +1,6 @@
 package com.postgresql.reverbclone.config;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,9 +25,14 @@ public class SecurityConfig {
     @Autowired
     private UserDetailsService userDetailsService;
 
+    private static final Logger logger = LoggerFactory.getLogger(SecurityConfig.class);
+
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
-        return config.getAuthenticationManager();
+        logger.debug("Creating AuthenticationManager bean from AuthenticationConfiguration");
+        AuthenticationManager authManager = config.getAuthenticationManager();
+        logger.debug("Successfully created AuthenticationManager: {}", authManager.getClass().getSimpleName());
+        return authManager;
     }
 
     // AuthenticationProvider configures how authentication will work
@@ -33,6 +40,7 @@ public class SecurityConfig {
     // userDetailsService to load user data
     @Bean
     public AuthenticationProvider authenticationProvider() {
+        logger.debug("Adding password encryption to AuthenticationProvider");
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setPasswordEncoder(new BCryptPasswordEncoder(12));
         provider.setUserDetailsService(userDetailsService);
@@ -46,6 +54,10 @@ public class SecurityConfig {
     // due to adding your JWTFilter that extends OncePerRequestFilter
     @Bean 
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        logger.info("Configuring security filter chain with JWT authentication");
+        logger.debug("Permitted endpoints: /register, /login");
+        logger.debug("Session management: STATELESS");
+        
         return http
             .csrf(customizer -> customizer.disable())
             .cors(Customizer.withDefaults())
