@@ -4,6 +4,7 @@ import LoginForm from './LoginForm'
 import RegisterForm from './RegisterForm'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import ProfilePage from './Profile'
+import NavBar from './NavBar'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,6 +12,7 @@ function App() {
   // Main component entrypoint, based on address routes to component
   return (
     <>
+      <NavBar></NavBar>
       <BrowserRouter>
         <Routes>
           <Route path="/register" element={<RegisterForm></RegisterForm>}>

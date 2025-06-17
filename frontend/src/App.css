@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+.main-navbar {
+  background-color: beige;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.main-navbar a {
+  float: left;
+  text-align: center;
+  color: aqua;
+  display: block;
+}
