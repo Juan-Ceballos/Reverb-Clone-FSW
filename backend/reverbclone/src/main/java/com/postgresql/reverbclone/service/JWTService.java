@@ -23,9 +23,9 @@ public class JWTService {
     @Value("${jwt.secret}")
     private String secretKey;
 
+    // Creates JWT tokens and functions to help with it's use 
     public String generateToken(String username) {
 
-        //jwt version methods or missing imports
         Map<String, Object> claims = new HashMap<>();
 
         return Jwts.builder()

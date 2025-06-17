@@ -29,12 +29,15 @@ const LoginForm = () => {
         }))
     }
 
+    // sets up state component values, prevents default on submit
+    // allows other implementation before submitting request
     const handleSubmit = async (eventObject) => {
         eventObject.preventDefault()
         setLoading(true)
         setMessage('')
         setError('')
 
+        // fetch with web address sets up response properties
         try {
             const response = await fetch('http://localhost:8080/login', {
                 method: 'POST',
@@ -43,6 +46,7 @@ const LoginForm = () => {
                 },
                 body: JSON.stringify(formData)
             })
+            // if 200 grabs token from response, stores it, goes to user profile
             if(response.ok) {
                 const result = await response.json()
                 if(result.token) {

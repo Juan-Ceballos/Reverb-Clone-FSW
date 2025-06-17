@@ -22,12 +22,14 @@ import com.postgresql.reverbclone.repo.UserRepo;
 public class ProfileController {
     @Autowired
     private UserRepo repo;
-    
+   
+    // checks if token matche to username, fetches user from database to check if null
+    // return reponse for profile UI
     @GetMapping("/user/{username}")
     public ResponseEntity<?> getUserDetails(@PathVariable String username) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String tokenUsername = authentication.getName(); // Set by your JwtFilter
+        String tokenUsername = authentication.getName();
 
         if (!tokenUsername.equals(username)) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You are not allowed to view this profile.");

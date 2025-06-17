@@ -8,6 +8,7 @@ import ProfilePage from './Profile'
 function App() {
   const [count, setCount] = useState(0)
 
+  // Main component entrypoint, based on address routes to component
   return (
     <>
       <BrowserRouter>

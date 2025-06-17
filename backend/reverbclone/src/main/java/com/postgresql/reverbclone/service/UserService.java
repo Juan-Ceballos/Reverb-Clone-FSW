@@ -25,20 +25,22 @@ public class UserService {
 
     private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
 
-     public Users register(UserRegistrationRequest request) {
-         if (repo.existsByUsername(request.getUsername())) {
-            throw new RuntimeException("User with username " + request.getUsername() + " already exists");
-         }
+        // use repo to check if user exist based on username if not throws error that user exist already     
+        public Users register(UserRegistrationRequest request) {
+            if (repo.existsByUsername(request.getUsername())) {
+                throw new RuntimeException("User with username " + request.getUsername() + " already exists");
+            }
+            // populate user model using the frontend request model and saves in database
+            Users user = new Users();
+            user.setUsername(request.getUsername());
+            user.setPassword(encoder.encode(request.getPassword()));
+            Users savedUser = repo.save(user);
+            return savedUser;
+        }
 
-         Users user = new Users();
-         user.setUsername(request.getUsername());
-         user.setPassword(encoder.encode(request.getPassword()));
-         Users savedUser = repo.save(user);
-         return savedUser;
-     }
-
-     public String verify(Users user) {
-         authManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
-         return jwtService.generateToken(user.getUsername());
-     }
+        // uses jwtservice to create jwt token for user if authenticated
+        public String verify(Users user) {
+            authManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+            return jwtService.generateToken(user.getUsername());
+        }
 }
