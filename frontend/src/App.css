@@ -10,8 +10,12 @@
   float: left;
   text-align: center;
   color: black;
-  font-family:;
   font-size: large;
   display: block;
   padding-right: 10%;
+}
+
+#reverb-clone-logo {
+  height: 100px;
+  width: 100px;
 }
