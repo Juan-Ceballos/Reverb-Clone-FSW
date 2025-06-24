@@ -1,5 +1,5 @@
 .main-navbar {
-  background-color: beige;
+  background-color: white;
   overflow: hidden;
   position: sticky;
   top: 0;
@@ -9,7 +9,9 @@
 .main-navbar a {
   float: left;
   text-align: center;
-  color: aqua;
+  color: black;
+  font-family:;
+  font-size: large;
   display: block;
   padding-right: 10%;
 }
