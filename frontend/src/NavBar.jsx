@@ -4,9 +4,9 @@ import {useNavigate} from 'react-router-dom'
 const NavBar = () => {
 
     const navItems = [
-        {name: 'Home', href:'/'},
-        {name: 'Login', href:'/login'},
-        {name: 'Register', href:'/register'}
+        {name: 'ReverbClone', href:'/'},
+        {name: 'Sign Up', href:'/login'},
+        {name: 'Log In', href:'/register'}
     ]
 
     return (
