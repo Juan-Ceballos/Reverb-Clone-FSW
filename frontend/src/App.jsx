@@ -12,8 +12,6 @@ function App() {
   // Main component entrypoint, based on address routes to component
   return (
     <>
-      <img id='reverb-clone-logo' src='../src/assets/Reverb-Clone-Logo.svg' alt='reverb-clone-logo'>
-      </img>
       <NavBar></NavBar>
       <BrowserRouter>
         <Routes>

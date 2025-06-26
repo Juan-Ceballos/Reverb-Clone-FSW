@@ -4,18 +4,29 @@
   position: sticky;
   top: 0;
   width: 100%;
-}
-
-.main-navbar a {
   float: left;
-  text-align: center;
   color: black;
   font-size: large;
-  display: block;
-  padding-right: 10%;
+  display: flex;
+  justify-content: left;
+  height: 10%;
+}
+
+
+.main-navbar .nav-items {
+  display: flex;
+  align-items: center;
+}
+
+.main-navbar img {
+  width: 200px;
+  height: 50%;
+  
 }
 
 #reverb-clone-logo {
-  height: 100px;
-  width: 100px;
+  height: fit-content;
 }
+
+
+
