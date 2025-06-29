@@ -28,7 +28,7 @@ const NavBar = () => {
                             <a
                                 key={item.name}
                                 href={item.href}
-                                className="nav-items"
+                                className="nav-item-logo"
                             >
                                 <img 
                                     id='reverb-clone-logo' 

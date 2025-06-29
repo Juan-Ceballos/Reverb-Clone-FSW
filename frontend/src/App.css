@@ -1,14 +1,12 @@
 .main-navbar {
   background-color: white;
   overflow: hidden;
-  position: sticky;
+  display: flex;
   top: 0;
-  width: 100%;
-  float: left;
+  width: 35%;
   color: black;
   font-size: large;
-  display: flex;
-  justify-content: left;
+  justify-content: space-between;
   height: 10%;
 }
 
@@ -18,15 +16,17 @@
   align-items: center;
 }
 
-.main-navbar img {
-  width: 200px;
-  height: 50%;
-  
+.nav-item-logo {
+  display: flex;
+  align-items: center;
+  width: 30%;
 }
 
-#reverb-clone-logo {
-  height: fit-content;
+.main-navbar img {
+  background-size: cover;
+  object-fit: cover;
 }
+
 
 
 
