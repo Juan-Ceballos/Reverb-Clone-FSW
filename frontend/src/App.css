@@ -1,15 +1,42 @@
 .main-navbar {
-  background-color: beige;
+  background-color: white;
   overflow: hidden;
-  position: sticky;
+  display: flex;
   top: 0;
-  width: 100%;
+  width: 35%;
+  color: black;
+  font-size: large;
+  justify-content: space-between;
+  height: 10%;
 }
 
-.main-navbar a {
-  float: left;
-  text-align: center;
-  color: aqua;
-  display: block;
-  padding-right: 10%;
+.main-navbar .nav-items {
+  display: flex;
+  align-items: center;
 }
+
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: orange;
+}
+
+.nav-item-logo {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  height: 30%;
+}
+
+
+
+
+
