@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
+import logo from '../src/assets/Reverb-Clone-Logo.svg'
 
 const NavBar = () => {
 
@@ -32,8 +33,9 @@ const NavBar = () => {
                             >
                                 <img 
                                     id='reverb-clone-logo' 
-                                    src='../src/assets/Reverb-Clone-Logo.svg' 
+                                    src={logo} 
                                     alt='reverb-clone-logo'
+                                    className='icon'
                                 >
                                 </img>  
                             </a>
