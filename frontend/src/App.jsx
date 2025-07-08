@@ -5,6 +5,7 @@ import RegisterForm from './RegisterForm'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import ProfilePage from './Profile'
 import NavBar from './NavBar'
+import SubNavBar from './SubNavBar'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <NavBar></NavBar>
+      <SubNavBar></SubNavBar>
       <BrowserRouter>
         <Routes>
           <Route path="/register" element={<RegisterForm></RegisterForm>}>
