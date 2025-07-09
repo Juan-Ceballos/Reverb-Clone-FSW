@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import LoginForm from './LoginForm'
 import RegisterForm from './RegisterForm'
@@ -8,7 +7,6 @@ import NavBar from './NavBar'
 import SubNavBar from './SubNavBar'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   // Main component entrypoint, based on address routes to component
   return (
