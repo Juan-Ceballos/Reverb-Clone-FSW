@@ -1,12 +1,10 @@
 import React from 'react'
-import logo from '../src/assets/Reverb-Clone-Logo.svg'
 import ReverbLogoIcon from './Reverb-Clone-Icon'
 import MainSearchBar from './MainSearchBar'
 
 const NavBar = () => {
 
     const navItems = [
-        {name: 'Search Bar', href:''},
         {name: 'Sign Up', href:'/login'},
         {name: 'Log In', href:'/register'}
     ]
