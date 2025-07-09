@@ -5,6 +5,7 @@ const NavBar = () => {
 
     const navItems = [
         {name: 'Reverb-Clone', href:'/'},
+        {name: 'Search Bar', href:''},
         {name: 'Sign Up', href:'/login'},
         {name: 'Log In', href:'/register'}
     ]
@@ -13,7 +14,7 @@ const NavBar = () => {
         <div>
             <div className='main-navbar'>
                 {navItems.map((item) => {
-                    if (item.name != "Reverb-Clone") {
+                    if(item.name != "Reverb-Clone") {
                         return(
                             <a 
                                 key={item.name}
@@ -24,7 +25,7 @@ const NavBar = () => {
                             </a>
                         )
                     } else {
-                        return (
+                        return(
                             <a
                                 key={item.name}
                                 href={item.href}
