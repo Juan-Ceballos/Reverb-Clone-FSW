@@ -18,7 +18,7 @@ const SubNavBar = () => {
                             <a 
                                 key={item.name}
                                 href={item.href}
-                                className="nav-items"
+                                className="sec-nav-items"
                             >
                                 {item.name}
                             </a>

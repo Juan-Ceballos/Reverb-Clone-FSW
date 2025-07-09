@@ -10,9 +10,17 @@
   height: 10%;
 }
 
-.main-navbar .nav-items {
+.nav-items {
   display: flex;
   align-items: center;
+}
+
+.sub-navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 35%;
+  height: 10%;
+  margin-left: 1%;
 }
 
 a:visited {
