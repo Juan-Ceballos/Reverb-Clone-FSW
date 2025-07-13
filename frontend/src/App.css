@@ -1,18 +1,41 @@
-.main-navbar {
+.nav-bar-container {
   background-color: white;
   overflow: hidden;
   display: flex;
+  flex-direction: row;
   top: 0;
-  width: 35%;
+  width: 100%;
   color: black;
   font-size: large;
-  justify-content: space-between;
-  height: 10%;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
 }
 
-.main-navbar .nav-items {
+.reverb-logo #reverb-clone-logo {
+  width: 100%;
+}
+
+.nav-items {
+  padding-right: 30px;
+}
+
+.sub-navbar {
   display: flex;
-  align-items: center;
+  justify-content: left;
+  width: 100%;
+  margin-left: 1%;
+  gap: 20px;
+}
+
+.search-div {
+  width: 50%;
+  height: 30px;
+}
+
+.main-search-bar {
+  width: 100%;
+  height: 100%;
 }
 
 a:visited {
@@ -29,14 +52,6 @@ a:hover {
   color: orange;
 }
 
-.nav-item-logo {
-  display: flex;
-  align-items: center;
-  width: 30%;
-  height: 30%;
+.nav-item-logo:hover {
+  opacity: 50%;
 }
-
-
-
-
-
