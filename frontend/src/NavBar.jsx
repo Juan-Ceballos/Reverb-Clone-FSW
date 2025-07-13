@@ -5,8 +5,8 @@ const NavBar = () => {
 
     const navItems = [
         {name: 'Reverb-Clone', href:'/'},
-        {name: 'Sign Up', href:'/login'},
-        {name: 'Log In', href:'/register'}
+        {name: 'Sign Up', href:'/register'},
+        {name: 'Log In', href:'/login'}
     ]
 
     return (

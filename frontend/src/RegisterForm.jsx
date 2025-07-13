@@ -55,7 +55,7 @@ const RegisterForm = () => {
 
     return (
         <div>
-            <h1>Register with username and password</h1>
+            <h1>Register with username, email and password</h1>
             <div>
                 <label htmlFor="username" className='sr-only'>
                     Username
