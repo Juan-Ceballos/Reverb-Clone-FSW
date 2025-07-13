@@ -7,6 +7,7 @@ const RegisterForm = () => {
 
     const [formData, setFormData] = useState({
         username: '',
+        email: '',
         password: '',
     })
 
@@ -83,6 +84,23 @@ const RegisterForm = () => {
                     required
                     className='appearance-none'
                     placeholder='Password'
+                    value={formData.password}
+                    onChange={handleChange}
+                    onKeyDown={(eventObject) => eventObject.key === 'Enter' && handleSubmit(eventObject)}
+                />
+            </div>
+
+            <div>
+                <label htmlFor="email" className='sr-only'>
+                    Email
+                </label>
+                <input
+                    id='email'
+                    name='email' 
+                    type="email" // text
+                    required
+                    className='appearance-none'
+                    placeholder='Email'
                     value={formData.password}
                     onChange={handleChange}
                     onKeyDown={(eventObject) => eventObject.key === 'Enter' && handleSubmit(eventObject)}

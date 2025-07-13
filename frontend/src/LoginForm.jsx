@@ -119,7 +119,7 @@ const LoginForm = () => {
                     type="email" // text
                     required
                     className='appearance-none'
-                    placeholder='email'
+                    placeholder='Email'
                     value={formData.email}
                     onChange={handleChange}
                     onKeyDown={(eventObject) => eventObject.key === 'Enter' && handleSubmit(eventObject)}
