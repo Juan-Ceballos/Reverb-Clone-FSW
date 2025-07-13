@@ -5,8 +5,8 @@ import MainSearchBar from './MainSearchBar'
 const NavBar = () => {
 
     const navItems = [
-        {name: 'Sign Up', href:'/login'},
-        {name: 'Log In', href:'/register'}
+        {name: 'Sign Up', href:'/register'},
+        {name: 'Log In', href:'/login'}
     ]
 
     return (

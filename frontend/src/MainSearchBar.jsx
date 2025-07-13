@@ -2,11 +2,11 @@ import React from 'react'
 
 const MainSearchBar = () => {
     return(
-        <div>
+        <div className='search-div'>
            <input
             type="text"
             value={""}
-            className=''
+            className='main-search-bar'
            >
            </input> 
         </div>
