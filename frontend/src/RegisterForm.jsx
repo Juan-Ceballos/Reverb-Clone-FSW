@@ -8,7 +8,7 @@ const RegisterForm = () => {
     const [formData, setFormData] = useState({
         username: '',
         email: '',
-        password: '',
+        password: ''
     })
 
     const [loading, setLoading] = useState(false)
@@ -80,7 +80,7 @@ const RegisterForm = () => {
                 <input
                     id='password'
                     name='password' 
-                    type="password" // text
+                    type='password'
                     required
                     className='appearance-none'
                     placeholder='Password'
@@ -97,11 +97,11 @@ const RegisterForm = () => {
                 <input
                     id='email'
                     name='email' 
-                    type="email" // text
+                    type='text'
                     required
                     className='appearance-none'
                     placeholder='Email'
-                    value={formData.password}
+                    value={formData.email}
                     onChange={handleChange}
                     onKeyDown={(eventObject) => eventObject.key === 'Enter' && handleSubmit(eventObject)}
                 />

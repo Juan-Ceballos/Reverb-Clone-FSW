@@ -8,6 +8,7 @@ import NavBar from './NavBar'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [isOpen, setIsOpen] = useState(true)
 
   // Main component entrypoint, based on address routes to component
   return (

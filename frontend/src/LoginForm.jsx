@@ -13,7 +13,6 @@ const LoginForm = () => {
         password: ''
     })
 
-
     // different use states of component
     const [loading, setLoading] = useState(false)
     const [message, setMessage] = useState('')
@@ -99,7 +98,7 @@ const LoginForm = () => {
                 <input
                     id='password'
                     name='password' 
-                    type="password" // text
+                    type="password"
                     required
                     className='appearance-none'
                     placeholder='Password'
@@ -116,7 +115,7 @@ const LoginForm = () => {
                 <input
                     id='email'
                     name='email' 
-                    type="email" // text
+                    type="text"
                     required
                     className='appearance-none'
                     placeholder='Email'
