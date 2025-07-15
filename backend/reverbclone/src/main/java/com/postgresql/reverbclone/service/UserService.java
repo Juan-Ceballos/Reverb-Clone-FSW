@@ -21,6 +21,7 @@ public class UserService {
 
     @Autowired
     AuthenticationManager authManager;
+    // set email?
 
     private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
 
