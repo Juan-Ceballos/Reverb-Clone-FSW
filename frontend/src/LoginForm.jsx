@@ -8,8 +8,7 @@ const LoginForm = () => {
     // useState array first element = formData, array 2 = setFormData
     // each value is an object of {username, password}
     const [formData, setFormData] = useState({
-        username: '',
-        email: '',
+        username_email: '',
         password: ''
     })
 
@@ -51,12 +50,13 @@ const LoginForm = () => {
                 const result = await response.json()
                 if(result.token) {
                     localStorage.setItem('jwt', result.token)
-                    setMessage(`Login successful: ${formData.username}`)
+                    // formdata has to handle email FIX
+                    setMessage(`Login successful: ${formData.username_email}`)
                     console.log('Login successful:', result)
-                    navigate(`/user/${formData.username}`)
+                    navigate(`/user/${formData.username_email}`)
                 } else {
                     setMessage('Login successful!')
-                    navigate(`/user/${formData.username}`)
+                    navigate(`/user/${formData.username_email}`)
                 }
             } else {
                 const errorText = await response.text()
@@ -75,16 +75,16 @@ const LoginForm = () => {
         <div>
             <h1>Sign in to your account</h1>
             <div>
-                <label htmlFor="username" className='sr-only'>
-                    Username
+                <label htmlFor="username-email" className='sr-only'>
+                    Username/Email
                 </label>
                 <input
-                    id='username'
-                    name='username' 
+                    id='username-email'
+                    name='username-email' 
                     type="text" 
                     required 
                     className='appearance-none'
-                    placeholder='Username'
+                    placeholder='Username-Email'
                     value={formData.username}
                     onChange={handleChange}
                     onKeyDown={(eventObject) => eventObject.key === 'Enter' && handleSubmit(eventObject)}
@@ -103,23 +103,6 @@ const LoginForm = () => {
                     className='appearance-none'
                     placeholder='Password'
                     value={formData.password}
-                    onChange={handleChange}
-                    onKeyDown={(eventObject) => eventObject.key === 'Enter' && handleSubmit(eventObject)}
-                />
-            </div>
-
-            <div>
-                <label htmlFor="email" className='sr-only'>
-                    Email
-                </label>
-                <input
-                    id='email'
-                    name='email' 
-                    type="text"
-                    required
-                    className='appearance-none'
-                    placeholder='Email'
-                    value={formData.email}
                     onChange={handleChange}
                     onKeyDown={(eventObject) => eventObject.key === 'Enter' && handleSubmit(eventObject)}
                 />
