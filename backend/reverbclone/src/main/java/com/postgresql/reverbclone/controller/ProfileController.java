@@ -37,12 +37,8 @@ public class ProfileController {
         if (!tokenUsername.equals(username)) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You are not allowed to view this profile.");
         }
-
-        if (username.contains("@")) {
-            user = repo.findByEmail(username);
-        } else {
-            user = repo.findByUsername(username);
-        }
+        
+        user = repo.findByUsername(username);
 
         if (user == null) {
             return ResponseEntity.notFound().build();
