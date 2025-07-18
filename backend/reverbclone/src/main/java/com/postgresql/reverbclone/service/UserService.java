@@ -44,4 +44,11 @@ public class UserService {
             authManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
             return jwtService.generateToken(user.getUsername());
         }
+
+        public String verifyEmail(Users user) {
+            String userEmail = user.getEmail();
+            Users userByEmail = repo.findByEmail(userEmail);
+            authManager.authenticate(new UsernamePasswordAuthenticationToken(userByEmail.getUsername(), user.getPassword()));
+            return jwtService.generateToken(userByEmail.getUsername());
+        }
 }

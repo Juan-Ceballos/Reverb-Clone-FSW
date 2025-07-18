@@ -25,9 +25,15 @@ public class LoginUserController {
     // login user verify user with token return token response
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Users user) {
-
         try {
-            String token = service.verify(user);
+            String identifier = user.getUsername();
+            String token;
+            if (identifier != null && identifier.contains("@")) {
+                user.setEmail(identifier);
+                token = service.verifyEmail(user);
+            } else {
+                token = service.verify(user);
+            }
             return ResponseEntity.ok(Map.of("token", token));
         } catch(BadCredentialsException e) {
             return ResponseEntity.status(401)

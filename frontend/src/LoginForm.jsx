@@ -8,7 +8,7 @@ const LoginForm = () => {
     // useState array first element = formData, array 2 = setFormData
     // each value is an object of {username, password}
     const [formData, setFormData] = useState({
-        username_email: '',
+        username: '',
         password: ''
     })
 
@@ -51,12 +51,12 @@ const LoginForm = () => {
                 if(result.token) {
                     localStorage.setItem('jwt', result.token)
                     // formdata has to handle email FIX
-                    setMessage(`Login successful: ${formData.username_email}`)
+                    setMessage(`Login successful: ${formData.username}`)
                     console.log('Login successful:', result)
-                    navigate(`/user/${formData.username_email}`)
+                    navigate(`/user/${formData.username}`)
                 } else {
                     setMessage('Login successful!')
-                    navigate(`/user/${formData.username_email}`)
+                    navigate(`/user/${formData.username}`)
                 }
             } else {
                 const errorText = await response.text()
@@ -75,16 +75,16 @@ const LoginForm = () => {
         <div>
             <h1>Sign in to your account</h1>
             <div>
-                <label htmlFor="username-email" className='sr-only'>
+                <label htmlFor="username" className='sr-only'>
                     Username/Email
                 </label>
                 <input
-                    id='username-email'
-                    name='username-email' 
+                    id='username'
+                    name='username' 
                     type="text" 
                     required 
                     className='appearance-none'
-                    placeholder='Username-Email'
+                    placeholder='Username'
                     value={formData.username}
                     onChange={handleChange}
                     onKeyDown={(eventObject) => eventObject.key === 'Enter' && handleSubmit(eventObject)}
