@@ -29,6 +29,11 @@ a:hover {
   color: orange;
 }
 
+#reverb-clone-logo:hover {
+  opacity: 0.4;
+  transition: opacity 0.2s;
+}
+
 .nav-item-logo {
   display: flex;
   align-items: center;
