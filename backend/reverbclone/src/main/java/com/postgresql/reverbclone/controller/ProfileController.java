@@ -44,6 +44,7 @@ public class ProfileController {
             return ResponseEntity.notFound().build();
         }
 
+        // add email to show in profile 
         return ResponseEntity.ok(Map.of(
             "id", user.getId(),
             "username", user.getUsername()
