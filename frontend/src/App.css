@@ -52,6 +52,14 @@ a:hover {
   color: orange;
 }
 
-.nav-item-logo:hover {
-  opacity: 50%;
+#reverb-clone-logo:hover {
+  opacity: 0.4;
+  transition: opacity 0.2s;
+}
+
+.nav-item-logo {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  height: 30%;
 }

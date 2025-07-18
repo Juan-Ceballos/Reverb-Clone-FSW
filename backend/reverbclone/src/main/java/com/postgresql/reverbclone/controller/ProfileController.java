@@ -29,20 +29,25 @@ public class ProfileController {
     public ResponseEntity<?> getUserDetails(@PathVariable String username) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        //String identifier = user.getUsername();
+        //username could come in as email
         String tokenUsername = authentication.getName();
+        Users user;
 
         if (!tokenUsername.equals(username)) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You are not allowed to view this profile.");
         }
         
-        Users user = repo.findByUsername(username);
+        user = repo.findByUsername(username);
+
         if (user == null) {
             return ResponseEntity.notFound().build();
         }
 
         return ResponseEntity.ok(Map.of(
             "id", user.getId(),
-            "username", user.getUsername()
+            "username", user.getUsername(),
+            "email", user.getEmail()
         ));
     }
 }

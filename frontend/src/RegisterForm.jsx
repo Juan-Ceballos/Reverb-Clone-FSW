@@ -7,7 +7,8 @@ const RegisterForm = () => {
 
     const [formData, setFormData] = useState({
         username: '',
-        password: '',
+        email: '',
+        password: ''
     })
 
     const [loading, setLoading] = useState(false)
@@ -54,7 +55,7 @@ const RegisterForm = () => {
 
     return (
         <div>
-            <h1>Register with username and password</h1>
+            <h1>Register with username, email and password</h1>
             <div>
                 <label htmlFor="username" className='sr-only'>
                     Username
@@ -79,11 +80,28 @@ const RegisterForm = () => {
                 <input
                     id='password'
                     name='password' 
-                    type="password" // text
+                    type='password'
                     required
                     className='appearance-none'
                     placeholder='Password'
                     value={formData.password}
+                    onChange={handleChange}
+                    onKeyDown={(eventObject) => eventObject.key === 'Enter' && handleSubmit(eventObject)}
+                />
+            </div>
+
+            <div>
+                <label htmlFor="email" className='sr-only'>
+                    Email
+                </label>
+                <input
+                    id='email'
+                    name='email' 
+                    type='text'
+                    required
+                    className='appearance-none'
+                    placeholder='Email'
+                    value={formData.email}
                     onChange={handleChange}
                     onKeyDown={(eventObject) => eventObject.key === 'Enter' && handleSubmit(eventObject)}
                 />

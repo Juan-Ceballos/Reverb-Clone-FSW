@@ -9,5 +9,7 @@ import com.postgresql.reverbclone.model.Users;
 @Repository
 public interface UserRepo extends JpaRepository<Users, Integer> {
     boolean existsByUsername(String username);
+    boolean existsByEmail(String email);
     Users findByUsername(String username);
+    Users findByEmail(String email);
 }

@@ -21,6 +21,7 @@ public class UserService {
 
     @Autowired
     AuthenticationManager authManager;
+    // set email?
 
     private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
 
@@ -33,6 +34,7 @@ public class UserService {
             Users user = new Users();
             user.setUsername(request.getUsername());
             user.setPassword(encoder.encode(request.getPassword()));
+            user.setEmail(request.getEmail());
             Users savedUser = repo.save(user);
             return savedUser;
         }
@@ -41,5 +43,12 @@ public class UserService {
         public String verify(Users user) {
             authManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
             return jwtService.generateToken(user.getUsername());
+        }
+
+        public String verifyEmail(Users user) {
+            String userEmail = user.getEmail();
+            Users userByEmail = repo.findByEmail(userEmail);
+            authManager.authenticate(new UsernamePasswordAuthenticationToken(userByEmail.getUsername(), user.getPassword()));
+            return jwtService.generateToken(userByEmail.getUsername());
         }
 }

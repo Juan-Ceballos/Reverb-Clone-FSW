@@ -15,6 +15,7 @@ public class MyUserDetailsService implements UserDetailsService {
 
     @Autowired
     private UserRepo repo;
+    // add email functions?
     
     // use username for repo methods that fetch from database
     @Override
@@ -26,4 +27,5 @@ public class MyUserDetailsService implements UserDetailsService {
         }
         return new UserPrincipal(user);
     }
+
 }

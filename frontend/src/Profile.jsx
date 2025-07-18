@@ -21,6 +21,7 @@ const ProfilePage = () => {
             <h1>User Details</h1>
             <p>ID: {user.id}</p>
             <p>Username: {user.username}</p>
+            <p>Email: {user.email}</p>
         </div>
     )
 }

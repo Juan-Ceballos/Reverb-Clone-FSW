@@ -12,7 +12,6 @@ const LoginForm = () => {
         password: ''
     })
 
-
     // different use states of component
     const [loading, setLoading] = useState(false)
     const [message, setMessage] = useState('')
@@ -49,14 +48,14 @@ const LoginForm = () => {
             // if 200 grabs token from response, stores it, goes to user profile
             if(response.ok) {
                 const result = await response.json()
-                if(result.token) {
+                if(result.token && result.username) {
                     localStorage.setItem('jwt', result.token)
-                    setMessage(`Login successful: ${formData.username}`)
-                    console.log('Login successful:', result)
-                    navigate(`/user/${formData.username}`)
+                    setMessage(`Login successful: ${result.username}`)
+                    console.log('Login successful:', result.username)
+                    navigate(`/user/${result.username}`)
                 } else {
                     setMessage('Login successful!')
-                    navigate(`/user/${formData.username}`)
+                    navigate(`/user/${result.username}`)
                 }
             } else {
                 const errorText = await response.text()
@@ -76,7 +75,7 @@ const LoginForm = () => {
             <h1>Sign in to your account</h1>
             <div>
                 <label htmlFor="username" className='sr-only'>
-                    Username
+                    Username/Email
                 </label>
                 <input
                     id='username'
@@ -98,7 +97,7 @@ const LoginForm = () => {
                 <input
                     id='password'
                     name='password' 
-                    type="password" // text
+                    type="password"
                     required
                     className='appearance-none'
                     placeholder='Password'
