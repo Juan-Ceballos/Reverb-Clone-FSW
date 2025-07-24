@@ -1,4 +1,7 @@
 package com.postgresql.reverbclone.model;
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
@@ -9,42 +12,49 @@ import jakarta.persistence.GenerationType;
 public class Listings {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int listing_id;
-    private String listing_name;
-    private String image_url;
+
+    @Column(name = "listing_id")
+    private int listingId;
+    @Column(name = "listing_name")
+    private String listingName;
+    @Column(name = "image_url")
+    private String imageURL;
     private Number price;
     private String description;
-    private String created_at;
-    private String category_id;
-    private String seller_id;
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+    @Column(name = "category_id")
+    private String categoryId;
+    @Column(name = "seller_id")
+    private String sellerId;
     private String status;
 
 
     public Listings() {}
 
-    public Listings(String listing_name, String image_url, Number price,
-        String description, String created_at, String status) {
+    public Listings(String listingName, String imageURL, Number price,
+        String description, LocalDateTime createdAt, String status) {
     
-        this.listing_name = listing_name;
-        this.image_url = image_url;
+        this.listingName = listingName;
+        this.imageURL = imageURL;
         this.price = price;
         this.description = description;
-        this.created_at = created_at;
+        this.createdAt = createdAt;
         this.status = status;
     }
 
     public int getListingId() {
-        return listing_id;
+        return listingId;
     }
 
-    public void setListingId(int listing_id) {
-        this.listing_id = listing_id;
+    public void setListingId(int listingId) {
+        this.listingId = listingId;
     }
 
     @Override
     public String toString() {
         return "Listings{" +
-        "listing_id" + listing_id +
+        "listing_id" + listingId +
         '}';
     }
 }
