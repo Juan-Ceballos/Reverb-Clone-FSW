@@ -54,7 +54,15 @@ public class Listings {
     @Override
     public String toString() {
         return "Listings{" +
-        "listing_id" + listingId +
-        '}';
+                "listingId=" + listingId +
+                ", listingName='" + listingName + '\'' +
+                ", imageURL='" + imageURL + '\'' +
+                ", price=" + price +
+                ", description='" + description + '\'' +
+                ", createdAt=" + createdAt +
+                ", categoryId='" + categoryId + '\'' +
+                ", sellerId='" + sellerId + '\'' +
+                ", status='" + status + '\'' +
+                '}';
     }
 }
