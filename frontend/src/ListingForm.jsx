@@ -3,6 +3,7 @@ import {useNavigate} from 'react-router-dom'
 
 const ListingForm = () => {
     const navigate = useNavigate()
+    const [isModalOpen, setIsModalOpen] = useState(false)
     const [formData, setFormData] = useState({
         itemName: '',
         itemImage: '',
@@ -33,6 +34,7 @@ const ListingForm = () => {
         setError('')
         console.log("Handle Submit")
         try {
+            // add listing controller or profile and then whats the fetch url
             const response = await fetch('http://localhost:8080/addlisting', {
                 method: 'POST',
                 headers: {
@@ -59,6 +61,7 @@ const ListingForm = () => {
             <button>
                 Add An Item
             </button>
+            <label>First Name:</label>
         </div>
     )
 }
