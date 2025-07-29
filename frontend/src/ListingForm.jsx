@@ -68,7 +68,7 @@ const ListingForm = () => {
             <button>
                 Add An Item
             </button>
-            <label>First Name:</label>
+            <ListingModal></ListingModal>
         </div>
     )
 }

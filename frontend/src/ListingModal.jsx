@@ -5,3 +5,5 @@ const ListingModal = ({handleClose, show, children}) => {
         </div>
     )
 }
+
+export default ListingModal
