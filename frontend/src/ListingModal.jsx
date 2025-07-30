@@ -1,4 +1,4 @@
-const ListingModal = ({handleClose, show, children}) => {
+const ListingModal = () => {
     return(
         <div className="listing-modal">
             <h1>Hello</h1>

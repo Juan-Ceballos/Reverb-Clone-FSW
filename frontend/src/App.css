@@ -79,6 +79,10 @@ a:hover {
   object-fit: cover;
 }
 
-.listing-modal {
+.modal {
   background-color: red;
+  height: 100px;
+  width: 100px;
+  top: 0;
+  display: flex;
 }

@@ -1,12 +1,14 @@
 import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
+import ListingModal from './ListingModal'
 
 const ListingForm = () => {
-    const navigate = useNavigate()
+
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [loading, setLoading] = useState(false)
     const [message, setMessage] = useState('')
     const [error, setError] = useState('')
+
 
     const [formData, setFormData] = useState({
         itemName: '',
@@ -25,14 +27,16 @@ const ListingForm = () => {
         setIsModalOpen(true)
     }
 
-    const handleClose = () => {
-        setIsModalOpen(false)
-    }
+    console.log(loading, message, error, setFormData)
 
-    const handleChange = (eventObject) => {
-        const {name, value} = eventObject.target
-        setFormData((prev) => ({...prev, [name]: value}))
-    }
+    // const handleClose = () => {
+    //     setIsModalOpen(false)
+    // }
+
+    // const handleChange = (eventObject) => {
+    //     const {name, value} = eventObject.target
+    //     setFormData((prev) => ({...prev, [name]: value}))
+    // }
 
     const handleSubmit = async(eventObject) => {
         eventObject.preventDefault()
@@ -40,6 +44,7 @@ const ListingForm = () => {
         setMessage('')
         setError('')
         console.log("Handle Submit")
+
         try {
             // add listing controller or profile and then whats the fetch url
             const response = await fetch('http://localhost:8080/addlisting', {
@@ -62,6 +67,8 @@ const ListingForm = () => {
             setLoading(false)
         }
     }
+
+    console.log(handleSubmit)
 
     // UI
     return(
