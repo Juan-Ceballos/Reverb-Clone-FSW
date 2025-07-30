@@ -100,18 +100,3 @@ a:hover {
   flex-direction: column;
   padding: 25px;
 }
-
-.modalContainer .title {
-  display: inline-block;
-  text-align: center;
-  margin-top: 10px;
-}
-
-.modalContainer .body {
-  flex: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.7rem;
-  text-align: center;
-}
