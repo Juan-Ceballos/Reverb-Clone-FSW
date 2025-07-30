@@ -1,7 +1,7 @@
 const ListingModal = ({handleClose, show, children}) => {
     return(
-        <div>
-
+        <div className="listing-modal">
+            <h1>Hello</h1>
         </div>
     )
 }

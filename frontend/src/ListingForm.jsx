@@ -62,13 +62,14 @@ const ListingForm = () => {
             setLoading(false)
         }
     }
+
     // UI
     return(
         <div>
-            <button>
+            <button onClick={handleOpen} className='openModalBtn'>
                 Add An Item
             </button>
-            <ListingModal></ListingModal>
+            {isModalOpen && <ListingModal setIsModalOpen={setIsModalOpen} className='modal'></ListingModal>}
         </div>
     )
 }
