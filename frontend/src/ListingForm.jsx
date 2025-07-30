@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {useNavigate} from 'react-router-dom'
+//import {useNavigate} from 'react-router-dom'
 import ListingModal from './ListingModal'
 
 const ListingForm = () => {
@@ -76,7 +76,7 @@ const ListingForm = () => {
             <button onClick={handleOpen} className='openModalBtn'>
                 Add An Item
             </button>
-            {isModalOpen && <ListingModal setIsModalOpen={setIsModalOpen} className='modal'></ListingModal>}
+            {isModalOpen && <ListingModal setIsModalOpen={setIsModalOpen}></ListingModal>}
         </div>
     )
 }

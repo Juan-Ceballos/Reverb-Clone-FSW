@@ -1,7 +1,12 @@
 const ListingModal = () => {
     return(
-        <div className="listing-modal">
-            <h1>Hello</h1>
+        <div className="modalBackground">
+            <div className="modalContainer">
+                <title>Hello World</title>
+                <body>
+                    <h1>This is the Modal</h1>
+                </body>
+            </div>
         </div>
     )
 }
