@@ -9,6 +9,9 @@ const ListingModal = ({ setIsModalOpen }) => {
     return(
         <div className="modalBackground">
             <div className="modalContainer">
+                <form action="">
+                    <input type="text" />
+                </form>
                 <button>Save</button>
                 <button onClick={handleClose}>Close</button>
             </div>
