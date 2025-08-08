@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-//import {useNavigate} from 'react-router-dom'
 import ListingModal from './ListingModal'
 
 const ListingForm = () => {
@@ -28,15 +27,6 @@ const ListingForm = () => {
     }
 
     console.log(loading, message, error, setFormData)
-
-    // const handleClose = () => {
-    //     setIsModalOpen(false)
-    // }
-
-    // const handleChange = (eventObject) => {
-    //     const {name, value} = eventObject.target
-    //     setFormData((prev) => ({...prev, [name]: value}))
-    // }
 
     const handleSubmit = async(eventObject) => {
         eventObject.preventDefault()
