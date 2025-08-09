@@ -30,6 +30,14 @@
   margin-left: 22px;
 }
 
+.prof-navbar {
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  gap: 20px;
+  margin-left: 22px;
+}
+
 .search-div {
   width: 45%;
   height: 40px;

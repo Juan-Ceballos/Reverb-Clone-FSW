@@ -2,11 +2,8 @@ import React from 'react'
 
 const ProfileNavBar = () => {
     const navItems = [
-        {name: '', href: ''},
-        {name: '', href: ''},
-        {name: '', href: ''},
-        {name: '', href: ''},
-        {name: '', href: ''}
+        {name: 'My Collection', href: ''},
+        {name: 'My Account', href: ''},
     ]
 
     return (

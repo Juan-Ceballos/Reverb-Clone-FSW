@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import ProfilePic from './Profile-Pic';
 import ListingForm from './ListingForm';
+import ProfileNavBar from './ProfileNavBar';
 
 const ProfilePage = () => {
     const {username} = useParams()
@@ -20,6 +21,7 @@ const ProfilePage = () => {
 
     return (
         <div>
+            <ProfileNavBar></ProfileNavBar>
             <h1>User Details</h1>
             <p>ID: {user.id}</p>
             <p>Username: {user.username}</p>
