@@ -108,3 +108,8 @@ a:hover {
   flex-direction: column;
   padding: 25px;
 }
+
+.price-field {
+  display: flex;
+  flex-direction: column;
+}
