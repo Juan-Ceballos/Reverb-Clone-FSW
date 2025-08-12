@@ -109,6 +109,11 @@ a:hover {
   padding: 25px;
 }
 
+.item-name-field {
+  display: flex;
+  flex-direction: column;
+}
+
 .price-field {
   display: flex;
   flex-direction: column;
