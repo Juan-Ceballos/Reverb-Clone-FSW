@@ -2,9 +2,13 @@ import React, {useState} from 'react'
 
 const ListingModal = ({ setIsModalOpen }) => {
 
-    const handleClose = () => [
+    const handleClose = () => {
         setIsModalOpen(false)
-    ]
+    }
+
+    const handleSubmit = () => {
+        return
+    }
 
     return(
         <div className="modalBackground">
@@ -19,7 +23,7 @@ const ListingModal = ({ setIsModalOpen }) => {
                         <input type="text" id='price-input'/>
                     </div>  
                 </form>
-                <button>Save</button>
+                <button onClick={handleSubmit}>Save</button>
                 <button onClick={handleClose}>Close</button>
             </div>
         </div>
