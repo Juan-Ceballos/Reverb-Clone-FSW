@@ -14,7 +14,6 @@ const ListingModal = ({ setIsModalOpen }) => {
     const handleChange = (eventObject) => {
         const {name, value} = eventObject.target
         setFormData(prev => ({
-            //... copies prev, 
             ...prev,
             [name]: value
         }))
